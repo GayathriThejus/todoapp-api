@@ -1,0 +1,35 @@
+.image {
+    height: 222px;
+    width: 100%;
+    object-fit: cover;
+    z-index: 0; 
+}
+
+.background-container {
+    position: relative;
+    height: 222px; /* Adjust this height according to your image height */
+}
+
+.background {
+    opacity: 0.8; /* Opacity is set as a value between 0 and 1 */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 222px;
+    background-image: linear-gradient(to right, #8a2be2, #290082); /* Replace with your gradient colors */
+    z-index: 1; /* Higher z-index to ensure it lays on top of the image */
+}
+
+.box {
+    width: 348px;
+    min-height: 57px;
+    overflow: auto;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 1); /* Opaque white */
+    position: relative;
+    z-index: 2; /* Higher z-index than the gradient background */
+}
+
