@@ -37,10 +37,10 @@ const Login: React.FC<{ setToken: (token: string) => void }> = ({ setToken }) =>
                 .then(data => {
                     console.log(data);
                     if (data.token) {
-                        alert("User logged in successfully"); // Show successful login alert
+                        alert("User logged in successfully"); 
                         navigate('/todo');
                     } else {
-                        alert("Login failed"); // Show login failed alert
+                        alert("Login failed"); 
                     }
                 })
                 .catch(error => {

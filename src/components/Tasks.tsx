@@ -1,4 +1,4 @@
-import React, { useState, ChangeEvent, KeyboardEvent } from 'react';
+import React, { useState, ChangeEvent, KeyboardEvent,useEffect } from 'react';
 import circle from "../assets/circle.png";
 import { RxCross1 } from "react-icons/rx";
 import correct from "../assets/correct.png";
@@ -21,9 +21,9 @@ const style: { [key: string]: string } = {
   input: "h-[57px] ml-[10px] w-[293px] focus:outline-none bg-white",
   img: "w-[22px] h-[22px] ml-4",
   icon: "absolute right-2 top-2 w-[20px] h-[20px]",
-  bottomTextContainer: "flex flex-row justify-between items-end mx-6 my-2", // Style for the bottom text container
-  bottomText: "text-[11px] text-gray-500", // Style for the bottom text
-  completedTask: "line-through text-gray-500", // Style for completed tasks
+  bottomTextContainer: "flex flex-row justify-between items-end mx-6 my-2", 
+  bottomText: "text-[11px] text-gray-500", 
+  completedTask: "line-through text-gray-500",
 };
 
 const Tasks: React.FC<TaskProps> = () => {
@@ -66,6 +66,49 @@ const Tasks: React.FC<TaskProps> = () => {
     return true;
   });
 
+
+  const addTodo = async (task: string) => {
+    try {
+      const response = await fetch('http://localhost:8000/addtodo/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ task })
+      });
+      const data = await response.json();
+      console.log(data); 
+    } catch (error) {
+      console.error('Error adding todo:', error);
+    }
+  };
+  
+  const deleteTodo = async (todoId: number) => {
+    try {
+      const response = await fetch(`http://localhost:8000/todos/${todoId}`, {
+        method: 'DELETE'
+      });
+      const data = await response.json();
+      console.log(data);
+    } catch (error) {
+      console.error('Error deleting todo:', error);
+    }
+  };
+  
+  useEffect(() => {
+    const fetchTodos = async () => {
+      try {
+        const response = await fetch('http://localhost:8000/todos/');
+        const data = await response.json();
+        console.log(data); 
+      } catch (error) {
+        console.error('Error fetching todos:', error);
+      }
+    };
+  
+    fetchTodos();
+  }, []);
+  
   return (
     <div className={style.container}>
       <div className={style.inputContainer}>
