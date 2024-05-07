@@ -64,7 +64,8 @@ const Login: React.FC<{ setToken: (token: string) => void }> = ({ setToken }) =>
                             <button type="submit" className={style.button}>Login</button>
                         </form>
                         <hr className="my-4" />
-                        <p className='text-xs text-gray-500 '>Create an account or <Link to="/signup">Signup</Link></p>
+                        <p className='text-xs text-gray-500 flex justify-center '>Create an account | <Link to="/signup"><span className='font-bold text-purple-900'>Signup</span></Link></p>
+                        <p className='text-xs text-gray-700 flex justify-center underline mt-4'><Link to='/todo'>checkout Task Page</Link></p>
                     </div>
                 </div>
             </div>

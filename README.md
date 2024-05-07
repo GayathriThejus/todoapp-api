@@ -1,30 +1,29 @@
-# React + TypeScript + Vite
+# Todo Application 
+- Task 2 
+  
+A Todo Web application using React, Vite & Typescript to efficiently act as a task manager helping users to easily manage their daily tasks. It provides a simple and intuitive interface for creating, updating, and deleting tasks. The application is powered by PyJWT authentication to ensure secure access to user data. The API integration is implemented using FAST API, a modern Python web framework.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Features
+- User Authentication : Users can sign up and log in securely using PyJWT authentication.
+- Todo Management: Users can create, update, and delete tasks.
+- Secure Access: Authentication ensures that only authorized users can access and manage their tasks.
 
-Currently, two official plugins are available:
+# Technologies used
+- React.js using Vite.js
+-  Typescript
+-  Python Fast API
+-  PyJWT Authentication
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# Usage
+- Sign Up: Register a new account by providing a username and password.
+- Log In: Log in to your account using the registered username and password.
+- Add Todo: Create a new task by entering its details and clicking the "Add" button.
+- Check Todos: Check out all your completed tasks.
+- Delete Todo: Remove a task by clicking the delete button next to it.
+  
+# Demo Link 
+[Link](https://drive.google.com/file/d/1KOrZyIhJgxfqlJwgLD0Fd8iq7NxGz5EH/view?usp=sharing)
 
-## Expanding the ESLint configuration
+### Contribution
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Contributions are welcome! If you'd like to contribute to the project, please fork the repository, make your changes, and submit a pull request.
